@@ -14,7 +14,9 @@ public class setSkis
 			theSkis.add(new Skis ("Atomic", "Bent Chetler", 3, true, "Freeski"));
 			theSkis.add(new Skis ("Atomic", "Punx", 3, true, "Freestyle"));
 			theSkis.add(new Skis ("Atomic", "Backland", 3, true, "Freeski"));
-			
+			theSkis.add(new Skis ("Volkl", "Deacon", 1, false, "Piste"));
+			theSkis.add(new Skis ("Volkl", "Mantra", 3, false, "Freeski"));
+			theSkis.add(new Skis ("Volkl", "Revolt", 3, true, "Freestyle"));
 			
 			
 		}
