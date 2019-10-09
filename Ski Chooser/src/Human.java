@@ -1,21 +1,33 @@
 
 public class Human
 	{
-		
+
 		private String name;
 		private int height;
 		private int level;
-		private String preference;
+		private String terrainPreference;
 		private String brand;
-		
-		public Human(String n, int h, int l, String p, String b)
-		{
-			name = n;
-			height = h;
-			level = l;
-			preference = p;
-			brand = b;
-		}
+		private int skiSize;
+
+		public Human(String n, int h, int l, String p, String b, int sS)
+			{
+				name = n;
+				height = h;
+				level = l;
+				terrainPreference = p;
+				brand = b;
+				skiSize = sS;
+			}
+
+		public int getSkiSize()
+			{
+				return skiSize;
+			}
+
+		public void setSkiSize(int skiSize)
+			{
+				this.skiSize = skiSize;
+			}
 
 		public String getName()
 			{
@@ -47,14 +59,14 @@ public class Human
 				this.level = level;
 			}
 
-		public String getPreference()
+		public String getTerrainPreference()
 			{
-				return preference;
+				return terrainPreference;
 			}
 
-		public void setPreference(String preference)
+		public void setTerrainPreference(String terrainPreference)
 			{
-				this.preference = preference;
+				this.terrainPreference = terrainPreference;
 			}
 
 		public String getBrand()
@@ -66,7 +78,5 @@ public class Human
 			{
 				this.brand = brand;
 			}
-		
-		
-		
+
 	}
