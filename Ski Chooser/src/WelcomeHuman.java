@@ -63,6 +63,7 @@ public class WelcomeHuman
 			//Make the full person and return it
 			makeEntireHuman();
 			
+			
 		}
 		
 		public static void makeUserHeight()
@@ -132,9 +133,11 @@ public class WelcomeHuman
 			
 			case 2:
 				userBrand = "Volkl";
+				break;
 			
 			case 3:
 				userBrand = "No Preference";
+				break;
 			
 			}
 		}
@@ -142,8 +145,9 @@ public class WelcomeHuman
 		public static void makeEntireHuman()
 		{
 			
-			theUser.add(new Human(userName,fullHeight,userDifficulty,userSkiType,userBrand,0));
+			theUser.add(new Human(userName,fullHeight,2,userSkiType,userBrand,0));
 			
 		}
+		
 
 	}

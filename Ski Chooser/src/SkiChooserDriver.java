@@ -7,6 +7,7 @@ public class SkiChooserDriver
 				// TODO Auto-generated method stub
 				WelcomeHuman.welcomeUser();
 				WelcomeHuman.recieveInformation();
+				LogicForChoosing.logicForChoosing();
 			}
 
 	}
