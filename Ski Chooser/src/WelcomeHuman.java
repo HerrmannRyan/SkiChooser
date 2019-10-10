@@ -19,6 +19,10 @@ public class WelcomeHuman
 		static int skiSizeUpper;
 		
 		static int userSkiPreference;
+		static String userSkiType;
+		
+		static int brandChoice;
+		static String userBrand;
 		
 		public static void welcomeUser()
 		{
@@ -47,8 +51,17 @@ public class WelcomeHuman
 			makeUserSkiLength();
 			
 			//Get preference
-			System.out.println("What type of skiing do you prefer? \n(1) Piste \n(2) All Mountain \n(3) Freestyle \n(4) Freeski \n(5)I do not know what these mean...");
+			System.out.println("What type of skiing do you prefer? \n(1) Piste \n(2) All Mountain \n(3) Freestyle \n(4) Freeski");
+			userSkiPreference = intInput.nextInt();
+			makeUserPreference();
 			
+			//Get brand
+			System.out.println("Do you have a brand you particularly like? \n(1) Atomic \n(2) Volkl \n(3) No Preference");
+			brandChoice = intInput.nextInt();
+			makeUserBrand();
+			
+			//Make the full person and return it
+			makeEntireHuman();
 			
 		}
 		
@@ -80,6 +93,57 @@ public class WelcomeHuman
 					skiSizeLower = fullHeight - 10;
 					skiSizeUpper = fullHeight + 5;
 				}
+		}
+		
+		public static void makeUserPreference()
+		{
+			
+			switch (userSkiPreference)
+			{
+			case 1:
+				userSkiType = "Piste";
+				break;
+				
+			case 2:
+				userSkiType = "All Mountain";
+				break;
+			
+			case 3:
+				userSkiType = "FreeStyle";
+				break;
+				
+			case 4:
+				userSkiType = "FreeSki";
+				break;
+			
+			}
+			
+		}
+		
+		public static void makeUserBrand()
+		{
+			
+			switch (brandChoice)
+			{
+			
+			case 1:
+				userBrand = "Atomic";
+				break;
+			
+			case 2:
+				userBrand = "Volkl";
+			
+			case 3:
+				userBrand = "No Preference";
+			
+			}
+		}
+		
+		public static void makeEntireHuman()
+		{
+			
+			theUser.add(new Human(userName,fullHeight,userDifficulty,userSkiType,userBrand,0));
+			
 		}
 
 	}
