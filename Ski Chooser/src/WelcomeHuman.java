@@ -145,7 +145,7 @@ public class WelcomeHuman
 		public static void makeEntireHuman()
 		{
 			
-			theUser.add(new Human(userName,fullHeight,2,userSkiType,userBrand,0));
+			theUser.add(new Human("",0,0,"","",0));
 			
 		}
 		
