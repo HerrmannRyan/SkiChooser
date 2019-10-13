@@ -56,12 +56,15 @@ public class WelcomeHuman
 			makeUserPreference();
 			
 			//Get brand
-			System.out.println("Do you have a brand you particularly like? \n(1) Atomic \n(2) Volkl \n(3) No Preference");
+			System.out.println("Do you have a brand you particularly like? \n(1) Atomic \n(2) Volkl \n(3) K2 \n(4) Rossignol \n(5) Nordica \n(6) Faction \n(7) No Preference");
 			brandChoice = intInput.nextInt();
 			makeUserBrand();
 			
 			//Make the full person and return it
 			makeEntireHuman();
+			
+			//Show the Human
+			//showHuman();
 			
 			
 		}
@@ -110,11 +113,11 @@ public class WelcomeHuman
 				break;
 			
 			case 3:
-				userSkiType = "FreeStyle";
+				userSkiType = "Freestyle";
 				break;
 				
 			case 4:
-				userSkiType = "FreeSki";
+				userSkiType = "Freeski";
 				break;
 			
 			}
@@ -135,7 +138,23 @@ public class WelcomeHuman
 				userBrand = "Volkl";
 				break;
 			
-			case 3:
+			case 3: 
+				userBrand = "K2";
+				break;
+				
+			case 4:
+				userBrand = "Rossignol";
+				break;
+				
+			case 5:
+				userBrand = "Nordica";
+				break;
+				
+			case 6: 
+				userBrand = "Faction";
+				break;
+				
+			case 7:
 				userBrand = "No Preference";
 				break;
 			
@@ -147,7 +166,33 @@ public class WelcomeHuman
 			
 			theUser.add(new Human("",0,0,"","",0));
 			
+			theUser.get(0).setName(userName);
+			theUser.get(0).setHeight(fullHeight);
+			theUser.get(0).setLevel(userDifficulty);
+			theUser.get(0).setTerrainPreference(userSkiType);
+			theUser.get(0).setBrand(userBrand);
+			theUser.get(0).setSkiSize(fullHeight);
 		}
+		
+		public static void showHuman()
+		{
+			
+			System.out.println(theUser.get(0).getName());
+			System.out.println(theUser.get(0).getHeight());
+			System.out.println(theUser.get(0).getLevel());
+			System.out.println(theUser.get(0).getTerrainPreference());
+			System.out.println(theUser.get(0).getBrand());
+			System.out.println(theUser.get(0).getSkiSize());
+			
+		}
+		
+		public static void giveSkiSizeRecommendation()
+		{
+			
+			System.out.println(theUser.get(0).getName() + ", I also think that in choosing these skis, that you get them in the ski length range from " + skiSizeLower + "cm to " + skiSizeUpper + "cm.");
+			
+		}
+		
 		
 
 	}

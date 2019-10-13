@@ -17,6 +17,11 @@ public class setSkis
 			theSkis.add(new Skis ("Volkl", "Deacon", 1, false, "Piste"));
 			theSkis.add(new Skis ("Volkl", "Mantra", 3, false, "Freeski"));
 			theSkis.add(new Skis ("Volkl", "Revolt", 3, true, "Freestyle"));
+			theSkis.add(new Skis ("Volkl", "Ledge", 1, true, "Freestyle"));
+			theSkis.add(new Skis ("Faction", "Idioms", 1, true, "Freestyle"));
+			theSkis.add(new Skis ("K2", "Konic", 2, false, "All Mountain"));
+			theSkis.add(new Skis ("Rossignol", "Experience 74", 1, false, "All Mountain"));
+			theSkis.add(new Skis ("Nordica", "Navigator", 1, false, "All Mountain"));
 			
 			
 		}

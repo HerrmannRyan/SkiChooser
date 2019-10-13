@@ -2,11 +2,23 @@
 public class LogicForChoosing
 	{
 		
+
+		static boolean continueToNext = true;
+		
 		//Find the code for difficulty first.
 		
 		public static void logicForChoosing()
 		{
-			findSameLevel();
+			//Remove the skis by importance
+			
+				findSameLevel();
+				checkArraylistSize();
+				if (continueToNext)
+				{
+					findSamePreference();
+				}
+				showFinalSkis();
+				
 			
 		}
 		
@@ -15,7 +27,7 @@ public class LogicForChoosing
 			int userLevel = WelcomeHuman.theUser.get(0).getLevel();
 			
 			
-			for (int i = setSkis.theSkis.size() - 1; i >= 0; i--)
+			for (int i = setSkis.theSkis.size() - 1 ; i >= 0; i--)
 				{
 					
 					int skiLevel = setSkis.theSkis.get(i).getLevel();
@@ -27,12 +39,54 @@ public class LogicForChoosing
 					
 				}
 			
-			System.out.println("Your remaining skis are:");
-			for(Skis s: setSkis.theSkis)
-				{
-					System.out.println(s.getName());
-				}
+		}
+		
+		public static void findSamePreference()
+		{
 			
+			String preference = WelcomeHuman.theUser.get(0).getTerrainPreference();
+			
+			for (int i = setSkis.theSkis.size() - 1; i >= 0; i-- )
+			{
+				String typeOfSkis = setSkis.theSkis.get(i).getSkiType();
+				
+				if (preference.equals(typeOfSkis))
+				{
+				}
+				else
+				{
+					setSkis.theSkis.remove(i);
+				}
+			}
+			
+			
+		}
+		
+		public static void checkArraylistSize()
+		{
+			
+			int skiArraySize = setSkis.theSkis.size();
+			
+			if (skiArraySize <= 2)
+			{
+				continueToNext = false;
+			}
+			else
+			{
+				continueToNext = true;
+			}
+			
+		}
+		
+		public static void showFinalSkis()
+		{
+			System.out.println("The Skis that I think you would like are: ");
+			for(Skis f: setSkis.theSkis)
+			{
+				System.out.print(f.getBrand());
+				System.out.print(" ");
+				System.out.println(f.getName());
+			}
 		}
 		
 		
