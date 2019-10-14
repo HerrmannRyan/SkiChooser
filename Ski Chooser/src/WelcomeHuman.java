@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class WelcomeHuman
 	{
@@ -8,63 +9,77 @@ public class WelcomeHuman
 		static Scanner stringInput = new Scanner(System.in);
 		static Scanner intInput = new Scanner(System.in);
 		
+		//Get name
 		static String userName;
 		
+		//Get height
 		static double feetHeight;
 		static double inchHeight;
 		static int fullHeight;
 		
+		//Get difficulty and ski sizes
+		static String userLevelChoice;
 		static int userDifficulty;
 		static int skiSizeLower;
 		static int skiSizeUpper;
 		
-		static int userSkiPreference;
+		//Get preference
+		//static int userSkiPreference;
 		static String userSkiType;
 		
-		static int brandChoice;
+		//Get Brand
 		static String userBrand;
 		
 		public static void welcomeUser()
 		{
 			
-			System.out.println("Hello! Today you will be chosen skis according to who you are! "
-					+ "\nI am going to take some infromation from you, and from that I will choose what skis I think will fit you best.");
+			JOptionPane.showMessageDialog(null, "Hello! Today you will be choosing skis for you according to what skiier you are! "
+					+ "\nI am going to take some information from you, and from that I will choose what skis I think will fit you best.");
 			
 		}
 		
 		public static void recieveInformation()
 		{	
 			//Get the name
-			System.out.println("Please state your name:");
-			userName = stringInput.nextLine();
+			//System.out.println("Please state your name:");
+			userName = JOptionPane.showInputDialog("What is your name?");
 			
 			//Get height
-			System.out.println("Okay, I will ask for your height in feet and inches. Please put down feet first");
-			feetHeight = intInput.nextInt();
-			System.out.println("Now, add on inches");
-			inchHeight =  intInput.nextInt();
+			//HeightInput userHeight = new HeightInput();
+			//userHeight.setVisible(true);
+			
+			JOptionPane.showMessageDialog(null, "Okay, I will ask for your height in feet and inches. Please put down feet first");
+			feetHeight = Double.parseDouble(JOptionPane.showInputDialog("Feet:"));
+			JOptionPane.showMessageDialog(null, "Now, add on inches");
+			inchHeight = Double.parseDouble(JOptionPane.showInputDialog("Inches"));
+			
 			makeUserHeight();
 			
 			//Get Level
-			System.out.println("When you ski, what level of skiing would you approximate yourself as? \n(1) Beginner \n(2) Intermediate / Advanced\n(3) Expert");
-			userDifficulty = intInput.nextInt();
+			String[] levelChoices = {"Beginner", "Intermediate / Advanced", "Expert"};
+			userLevelChoice = (String) JOptionPane.showInputDialog(null, "What would you approximate yourself as?", "Select Level", JOptionPane.QUESTION_MESSAGE, null, levelChoices, levelChoices[0]);
+			makeUserDifficulty();
 			makeUserSkiLength();
 			
+			
 			//Get preference
-			System.out.println("What type of skiing do you prefer? \n(1) Piste \n(2) All Mountain \n(3) Freestyle \n(4) Freeski");
-			userSkiPreference = intInput.nextInt();
-			makeUserPreference();
+			String[] preferenceChoice = {"Piste", "All Mountain", "Freestyle", "Freeski"};
+			//System.out.println("What type of skiing do you prefer? \n(1) Piste \n(2) All Mountain \n(3) Freestyle \n(4) Freeski");
+			userSkiType = (String) JOptionPane.showInputDialog(null, "What type of skiing do you prefer?", "Select Ski Preference", JOptionPane.QUESTION_MESSAGE,null, preferenceChoice, preferenceChoice[0]);
+			//makeUserPreference();
 			
 			//Get brand
-			System.out.println("Do you have a brand you particularly like? \n(1) Atomic \n(2) Volkl \n(3) K2 \n(4) Rossignol \n(5) Nordica \n(6) Faction \n(7) No Preference");
-			brandChoice = intInput.nextInt();
-			makeUserBrand();
+			String[] brandChoice = {"Atomic", "Volkl", "K2", "Rossignol", "Nordica", "Faction", "No Preference"};
+			//System.out.println("Do you have a brand you particularly like? \n(1) Atomic \n(2) Volkl \n(3) K2 \n(4) Rossignol \n(5) Nordica \n(6) Faction \n(7) No Preference");
+			userBrand = (String) JOptionPane.showInputDialog(null, "Do you have a brand you particularly like?", "Select Brand", JOptionPane.QUESTION_MESSAGE, null, brandChoice, brandChoice[6]);
+			
+			//makeUserBrand();
 			
 			//Make the full person and return it
 			makeEntireHuman();
 			
 			//Show the Human
-			//showHuman();
+			showHuman();
 			
 			
 		}
@@ -77,6 +92,28 @@ public class WelcomeHuman
 			
 			fullHeight = (int)((feetToCentimeters) + (inchToCentimeters));
 				
+		}
+		
+		public static void makeUserDifficulty()
+		{
+			
+			switch (userLevelChoice)
+			{
+			
+			case "Beginner":
+				userDifficulty = 1;
+				break;
+				
+			case "Intermediate / Advanced":
+				userDifficulty = 2;
+				break;
+				
+			case "Expert":
+				userDifficulty = 3;
+				break;
+			
+			}
+			
 		}
 		
 		public static void makeUserSkiLength()
@@ -99,7 +136,8 @@ public class WelcomeHuman
 				}
 		}
 		
-		public static void makeUserPreference()
+		
+		/*public static void makeUserPreference()
 		{
 			
 			switch (userSkiPreference)
@@ -122,9 +160,9 @@ public class WelcomeHuman
 			
 			}
 			
-		}
+		}*/
 		
-		public static void makeUserBrand()
+		/*public static void makeUserBrand()
 		{
 			
 			switch (brandChoice)
@@ -159,7 +197,7 @@ public class WelcomeHuman
 				break;
 			
 			}
-		}
+		}*/
 		
 		public static void makeEntireHuman()
 		{
@@ -189,7 +227,7 @@ public class WelcomeHuman
 		public static void giveSkiSizeRecommendation()
 		{
 			
-			System.out.println(theUser.get(0).getName() + ", I also think that in choosing these skis, that you get them in the ski length range from " + skiSizeLower + "cm to " + skiSizeUpper + "cm.");
+			JOptionPane.showMessageDialog(null, theUser.get(0).getName() + ", I also think that in choosing these skis, that you get them in the ski length range from " + skiSizeLower + "cm to " + skiSizeUpper + "cm.");
 			
 		}
 		

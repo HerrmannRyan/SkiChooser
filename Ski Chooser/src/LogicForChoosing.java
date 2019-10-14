@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public class LogicForChoosing
 	{
@@ -80,13 +81,12 @@ public class LogicForChoosing
 		
 		public static void showFinalSkis()
 		{
-			System.out.println("The Skis that I think you would like are: ");
+			JOptionPane.showMessageDialog(null, "The Skis that I think you would like are: " ); 
 			for(Skis f: setSkis.theSkis)
 			{
-				System.out.print(f.getBrand());
-				System.out.print(" ");
-				System.out.println(f.getName());
+				JOptionPane.showMessageDialog(null, f.getBrand() + " " + f.getName());
 			}
+
 		}
 		
 		
