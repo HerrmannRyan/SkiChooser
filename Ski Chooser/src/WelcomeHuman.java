@@ -79,7 +79,7 @@ public class WelcomeHuman
 			makeEntireHuman();
 			
 			//Show the Human
-			showHuman();
+			//showHuman();
 			
 			
 		}

@@ -20,7 +20,7 @@ public class HeightInput extends JFrame implements ActionListener{
 		
 		initComponents();
 		
-		setSize(300, 200);
+		setSize(250, 200);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -64,12 +64,15 @@ public class HeightInput extends JFrame implements ActionListener{
 		theHeightInFeet = Double.parseDouble(heightInFeetString);
 		theHeightInInches= Double.parseDouble(heightInInchString);
 		
+		System.out.println(theHeightInFeet + " " + heightInInches);
+		
 	}
 	
-	/*public static void getTheHeight()
-	{
-		new HeightInput().setVisible(true);
-	}*/
+	public static void main(String[] args)
+		{
+			new HeightInput().setVisible(true);
+			
+		}
 
 	
 
