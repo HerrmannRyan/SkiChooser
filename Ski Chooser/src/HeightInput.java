@@ -2,7 +2,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;
 
-public class HeightInput extends JFrame implements ActionListener{
+public class HeightInput extends JFrame implements ActionListener {
 	
 	private JLabel labelQuestion;
 	private JLabel labelFeet;
@@ -64,15 +64,19 @@ public class HeightInput extends JFrame implements ActionListener{
 		theHeightInFeet = Double.parseDouble(heightInFeetString);
 		theHeightInInches= Double.parseDouble(heightInInchString);
 		
-		System.out.println(theHeightInFeet + " " + heightInInches);
+		//System.out.println(theHeightInFeet + " " + theHeightInInches);
 		
 	}
 	
-	public static void main(String[] args)
+	/*public static void main(String[] args)
 		{
 			new HeightInput().setVisible(true);
-			
-		}
+			if (flag)
+				{
+					System.out.println(theHeightInFeet + " " + theHeightInInches);
+				}
+			//System.out.println(theHeightInFeet + " " + theHeightInInches);
+		}*/
 
 	
 

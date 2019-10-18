@@ -48,6 +48,7 @@ public class WelcomeHuman
 			//HeightInput userHeight = new HeightInput();
 			//userHeight.setVisible(true);
 			
+			
 			JOptionPane.showMessageDialog(null, "Okay, I will ask for your height in feet and inches. Please put down feet first");
 			feetHeight = Double.parseDouble(JOptionPane.showInputDialog("Feet:"));
 			JOptionPane.showMessageDialog(null, "Now, add on inches");
