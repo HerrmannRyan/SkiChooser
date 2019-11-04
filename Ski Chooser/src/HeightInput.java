@@ -68,15 +68,11 @@ public class HeightInput extends JFrame implements ActionListener {
 		
 	}
 	
-	/*public static void main(String[] args)
+	public static void main(String[] args)
 		{
 			new HeightInput().setVisible(true);
-			if (flag)
-				{
-					System.out.println(theHeightInFeet + " " + theHeightInInches);
-				}
 			//System.out.println(theHeightInFeet + " " + theHeightInInches);
-		}*/
+		}
 
 	
 
